@@ -28,16 +28,16 @@ class ViewController: UIViewController {
 
 extension ViewController:UITableViewDelegate{
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return tableView.frame.height / 5
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return tableView.frame.height / 5
+//    }
 }
 
 extension ViewController:UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 31
+        return 100
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -82,9 +82,8 @@ class CustomCell:UITableViewCell{
         if textLabel?.text != ""{
             
             detailTextLabel?.text = ""
-            detailTextLabel?.text = textLabel!.text
+            detailTextLabel?.text = textLabel!.text //再利用前にtextLabelに表示していた値
         }
-        
         backgroundColor = .systemGreen
         print("reuse")
         
